@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod
+metadata:
+ name: containerport-pod
+ labels:
+   app: portapp
+spec:
+ containers:
+ - name: conport-container
+   image: nginx
+   command: ['echo']
+   args: [' I am Bomma ']
+   ports:
+   - containerPort: 80
+
