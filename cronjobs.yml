@@ -1,0 +1,19 @@
+apiVersion: batch/v1beta1
+kind: CronJob
+metadata:
+ name: greet
+spec:
+ schedule: "*/1 * * * *"
+ jobTemplate:
+  spec:
+   template:
+    spec:
+     containers:
+     - name: greet-container
+       image: busybox
+       args:
+       - /bin/sh
+       - -c
+       - date; echo Hello Bomma! Welcome to Kubernetes.....
+     restartPolicy: OnFailure
+
