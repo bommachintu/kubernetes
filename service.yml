@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: Service
+metadata: 
+ name: myservice
+spec:
+ type: ClusterIP
+ selector:
+  app: nginx
+ ports:
+ - protocol: TCP
+   port: 8080
+   targetPort: 80
+
+
+
+# Type: specifies the service type.
+#selector: service that will forward the traffic to any pods with the label nginx.
+# Port: specifies the port the service will listen on, and which one clients will use to access it.
+# Targetport: specifies the port the traffic will be forwarded to on the pods . if the port and targetport are same, it's safe to omit target port.
+ 
